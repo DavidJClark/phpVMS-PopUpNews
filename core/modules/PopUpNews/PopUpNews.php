@@ -18,7 +18,7 @@ class PopUpNews extends CodonModule
                 $result = PopUpNewsData::popupnewsitem($id);
 
                 Template::Set('item', $result);
-                Template::Show('popupnews_item.tpl');
+                Template::Show('popupnews/popupnews_item.tpl');
         }
     
 
@@ -39,7 +39,7 @@ class PopUpNews extends CodonModule
             Template::Set('subject', $row->subject);
             Template::Set('postdate', date('m/d/Y', $row->postdate));
 
-            Template::Show('popupnews_list.tpl');
+            Template::Show('popupnews/popupnews_list.tpl');
         }
         echo '<center>PopUpNews &copy simpilotgroup.com</center>';
     }

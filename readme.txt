@@ -20,16 +20,19 @@ php 5.3.4
 mysql 5.0.7
 apache 2.2.17
 
-Place the attached files in the proper folders of your phpVMS install
+Install Using Simpilotgroup Plugin Manager
 
-1 - Create a folder in core/modules named PopUpNews and place PopUpNews.php in it
-2 - Place PopUpNewsData.class.php in core/common folder
-3 - Put the tpl files in your skn folder
+-Download the package
+-Upload the package to your site using the plugin manager
+-Use the auto-install from the plugin manager
+
+Install Manually:
+
+-Download the package.
+-Unzip the package and place the files as structured in your root phpVMS install.
 
 Where you want to call the PopUpNews List in your site use ->
 
 <?php PopUpNews::PopUpNewsList(5); ?>
 
 The number "5" can be changed to however many news posts you want to show in your list.
-
-That's all!  ;)

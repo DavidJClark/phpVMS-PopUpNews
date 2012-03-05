@@ -17,6 +17,6 @@ class PopUpNewsData extends CodonData
                  FROM ' . TABLE_PREFIX .'news
                  WHERE id=' . $id . ' ';
 
-        return DB::get_results($query);
+        return DB::get_row($query);
     }
 }
