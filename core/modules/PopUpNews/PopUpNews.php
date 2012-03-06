@@ -6,29 +6,22 @@
 //To view full icense text visit http://creativecommons.org/licenses/by-nc-sa/3.0/
 //
 //@author David Clark (simpilot)
-//@copyright Copyright (c) 2009-2010, David Clark
+//@copyright Copyright (c) 2009-2012, David Clark
 //@license http://creativecommons.org/licenses/by-nc-sa/3.0/
 
 class PopUpNews extends CodonModule
 {
-    public function popupnewsitem()
-    {
-                $id = $_GET['itemid'];
+    public function popupnewsitem($id) {
 
                 $result = PopUpNewsData::popupnewsitem($id);
-
                 Template::Set('item', $result);
                 Template::Show('popupnews/popupnews_item.tpl');
         }
     
 
-    public function PopUpNewsList($count=5)
+    public function PopUpNewsList($howmany = 5)
     {
-
-        $sql = 'SELECT id, subject, body, postedby, UNIX_TIMESTAMP(postdate) AS postdate
-					 FROM ' . TABLE_PREFIX .'news ORDER BY postdate DESC LIMIT '.$count;
-
-        $res = DB::get_results($sql);
+        $res = PopUpNews::get_news_list($howmany);
 
         if(!$res)
             return;
@@ -38,9 +31,8 @@ class PopUpNews extends CodonModule
             Template::Set('id', $row->id);
             Template::Set('subject', $row->subject);
             Template::Set('postdate', date('m/d/Y', $row->postdate));
-
             Template::Show('popupnews/popupnews_list.tpl');
         }
-        echo '<center>PopUpNews &copy simpilotgroup.com</center>';
+        echo '<center><a href="http://www.simpilotgroup.com">PopUpNews &copy simpilotgroup.com</a></center>';
     }
 }

@@ -6,10 +6,10 @@
 //To view full icense text visit http://creativecommons.org/licenses/by-nc-sa/3.0/
 //
 //@author David Clark (simpilot)
-//@copyright Copyright (c) 2009-2010, David Clark
+//@copyright Copyright (c) 2009-2012, David Clark
 //@license http://creativecommons.org/licenses/by-nc-sa/3.0/
 ?>
 
-<a href="<?php echo SITE_URL ?>/index.php/PopUpNews/popupnewsitem/?itemid=<?php echo $id;?>"><b><u><?php echo $subject;?></b></u></a><br>
+<a href="<?php echo SITE_URL ?>/index.php/PopUpNews/popupnewsitem/<?php echo $id;?>"><b><u><?php echo $subject;?></u></b></a><br />
 <?php echo $postdate;?>
 <hr />

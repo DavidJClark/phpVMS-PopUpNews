@@ -6,17 +6,24 @@
 //To view full icense text visit http://creativecommons.org/licenses/by-nc-sa/3.0/
 //
 //@author David Clark (simpilot)
-//@copyright Copyright (c) 2009-2010, David Clark
+//@copyright Copyright (c) 2009-2012, David Clark
 //@license http://creativecommons.org/licenses/by-nc-sa/3.0/
 
 class PopUpNewsData extends CodonData
 {	 
-    public static function popupnewsitem($id)
+    public function popupnewsitem($id)
     {
         $query = 'SELECT *
                  FROM ' . TABLE_PREFIX .'news
                  WHERE id=' . $id . ' ';
 
         return DB::get_row($query);
+    }
+    
+    public function get_news_list($howmany) {
+        $sql = 'SELECT id, subject, body, postedby, UNIX_TIMESTAMP(postdate) AS postdate
+		FROM ' . TABLE_PREFIX .'news ORDER BY postdate DESC LIMIT '.$howmany;
+
+        return DB::get_results($sql);
     }
 }
