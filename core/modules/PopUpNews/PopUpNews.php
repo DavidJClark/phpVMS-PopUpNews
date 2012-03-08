@@ -21,7 +21,7 @@ class PopUpNews extends CodonModule
 
     public function PopUpNewsList($howmany = 5)
     {
-        $res = PopUpNews::get_news_list($howmany);
+        $res = PopUpNewsData::get_news_list($howmany);
 
         if(!$res)
             return;
