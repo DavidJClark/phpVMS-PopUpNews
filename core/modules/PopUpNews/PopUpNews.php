@@ -23,7 +23,7 @@ class PopUpNews extends CodonModule
 
     public function PopUpNewsList($howmany = 5)
     {
-        if(!is_numeric($id)){exit;}
+        if(!is_numeric($howmany)){exit;}
         
         $res = PopUpNewsData::get_news_list($howmany);
 
