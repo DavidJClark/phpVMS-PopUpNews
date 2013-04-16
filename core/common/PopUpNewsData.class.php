@@ -15,14 +15,14 @@ class PopUpNewsData extends CodonData
     {
         $query = 'SELECT *
                  FROM ' . TABLE_PREFIX .'news
-                 WHERE id=' . $id . ' ';
+                 WHERE id=' . DB::escape($id) . ' ';
 
         return DB::get_row($query);
     }
     
     public function get_news_list($howmany) {
         $sql = 'SELECT id, subject, body, postedby, UNIX_TIMESTAMP(postdate) AS postdate
-		FROM ' . TABLE_PREFIX .'news ORDER BY postdate DESC LIMIT '.$howmany;
+		FROM ' . TABLE_PREFIX .'news ORDER BY postdate DESC LIMIT '.DB::escape($howmany);
 
         return DB::get_results($sql);
     }
