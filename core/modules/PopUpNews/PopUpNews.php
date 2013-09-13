@@ -30,7 +30,7 @@ class PopUpNews extends CodonModule
         $res = PopUpNewsData::get_news_list($howmany);
 
         $this->set('news', $res);
-        $this->show('popupnews_list');
+        $this->show('popupnews/popupnews_list');
         echo '<div style="text-align: center; font-size: 10px;"><a href="http://www.simpilotgroup.com">PopUpNews &copy simpilotgroup.com</a></div>';
     }
 }
