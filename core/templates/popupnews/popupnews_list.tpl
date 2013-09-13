@@ -14,7 +14,7 @@
 <?php
     foreach($news as $item) {
         echo '<tr>';
-        echo '<td><a href="'.SITE_URL.'/index.php/PopUpNews/popupnewsitem/'.$id.'">'.$subject.'</a> - '.$postdate.'</td>';
+        echo '<td><a href="'.SITE_URL.'/index.php/PopUpNews/popupnewsitem/'.$item->id.'">'.$item->subject.'</a> - '.date(DATE_FORMAT, strtotime($item->postdate)).'</td>';
         echo '</tr>';
     }
 ?>
