@@ -29,16 +29,8 @@ class PopUpNews extends CodonModule
         
         $res = PopUpNewsData::get_news_list($howmany);
 
-        if(!$res)
-            return;
-
-        foreach($res as $row)
-        {
-            Template::Set('id', $row->id);
-            Template::Set('subject', $row->subject);
-            Template::Set('postdate', date('m/d/Y', $row->postdate));
-            Template::Show('popupnews/popupnews_list.tpl');
-        }
-        echo '<center><a href="http://www.simpilotgroup.com">PopUpNews &copy simpilotgroup.com</a></center>';
+        $this->set('news', $res);
+        $this->show('popupnews_list');
+        echo '<div style="text-align: center; font-size: 10px;"><a href="http://www.simpilotgroup.com">PopUpNews &copy simpilotgroup.com</a></div>';
     }
 }

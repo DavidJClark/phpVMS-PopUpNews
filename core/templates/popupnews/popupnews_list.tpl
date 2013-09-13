@@ -10,6 +10,12 @@
 //@license http://creativecommons.org/licenses/by-nc-sa/3.0/
 ?>
 
-<a href="<?php echo SITE_URL ?>/index.php/PopUpNews/popupnewsitem/<?php echo $id;?>"><b><u><?php echo $subject;?></u></b></a><br />
-<?php echo $postdate;?>
-<hr />
+<table>
+<?php
+    foreach($news as $item) {
+        echo '<tr>';
+        echo '<td><a href="'.SITE_URL.'/index.php/PopUpNews/popupnewsitem/'.$id.'">'.$subject.'</a> - '.$postdate.'</td>';
+        echo '</tr>';
+    }
+?>
+</table>
