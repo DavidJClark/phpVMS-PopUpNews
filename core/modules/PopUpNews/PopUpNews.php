@@ -17,6 +17,7 @@ class PopUpNews extends CodonModule
                 if(!is_numeric($id)){header('Location: '.url('/'));}
         
                 $result = PopUpNewsData::popupnewsitem($id);
+                $this->title = $result->subject;
                 Template::Set('item', $result);
                 Template::Show('popupnews/popupnews_item.tpl');
         }
