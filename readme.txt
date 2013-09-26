@@ -1,4 +1,4 @@
-PopUpNews
+PopUpNews ver 3.0
 
 Module to create a quick view news list on your front page of a phpVMS site.
 
@@ -15,10 +15,10 @@ www.simpilotgroup.com
 www.david-clark.net
 
 Developed on:
-phpVMS v2.1.934-158
-php 5.3.4
-mysql 5.0.7
-apache 2.2.17
+phpVMS v-dev
+php 5.3.13
+mysql 5.5.24
+apache 2.2.22
 
 Install Using Simpilotgroup Plugin Manager
 

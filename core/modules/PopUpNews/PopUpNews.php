@@ -19,7 +19,7 @@ class PopUpNews extends CodonModule
                 $result = PopUpNewsData::popupnewsitem($id);
                 $this->title = $result->subject;
                 Template::Set('item', $result);
-                Template::Show('popupnews/popupnews_item.tpl');
+                Template::Show('popupnews/popupnews_item');
         }
     
 
