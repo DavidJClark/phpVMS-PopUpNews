@@ -11,7 +11,7 @@
 
 class PopUpNews extends CodonModule
 {
-    public function popupnewsitem($id) {
+    public static function popupnewsitem($id) {
 
                 $id = intval($id);
                 if(!is_numeric($id)){header('Location: '.url('/'));}
@@ -23,7 +23,7 @@ class PopUpNews extends CodonModule
         }
     
 
-    public function PopUpNewsList($howmany = 5)
+    public static function PopUpNewsList($howmany = 5)
     {
         $howmany = intval($howmany);
         if(!is_numeric($howmany)){exit;}
