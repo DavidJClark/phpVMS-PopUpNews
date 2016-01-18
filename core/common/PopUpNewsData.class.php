@@ -11,7 +11,7 @@
 
 class PopUpNewsData extends CodonData
 {	 
-    public function popupnewsitem($id)
+    public static function popupnewsitem($id)
     {
         $query = 'SELECT *
                  FROM ' . TABLE_PREFIX .'news
@@ -20,7 +20,7 @@ class PopUpNewsData extends CodonData
         return DB::get_row($query);
     }
     
-    public function get_news_list($howmany) {
+    public static function get_news_list($howmany) {
         $sql = 'SELECT id, subject, body, postedby, UNIX_TIMESTAMP(postdate) AS postdate
 		FROM ' . TABLE_PREFIX .'news ORDER BY postdate DESC LIMIT '.DB::escape($howmany);
 
